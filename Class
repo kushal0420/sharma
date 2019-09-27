@@ -1,0 +1,117 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NUnit.Framework;
+using Assignment01;
+
+namespace Assignment01
+{
+    [TestFixture]
+    public class RectangleTestcode
+    {
+        [Test]
+
+        public void GetRectangleLength_InputLength9_outcomeEquals9()
+
+        {
+            //Arrange
+            int rectanglel = 9;
+            int rectanglew = 45;
+            int outcomeexpected = rectanglel;
+            Rectangle result = new Rectangle(rectanglel, rectanglew);
+
+            //Act
+            int resultofcode = result.GetLength();
+            //Assert
+            Assert.AreEqual(outcomeexpected, resultofcode);
+        }
+
+
+
+        [Test]
+        public void SetRectangleLength_InputLength11_outcomeEquals11()
+        {
+            //Arrange
+            int rectanglel = 11;
+            int rectanglew = 47;
+            int outcomeexpected = rectanglel;
+            Rectangle result = new Rectangle(rectanglel, rectanglew);
+
+            //Act
+            int resultofcode = result.SetLength(rectanglel);
+            //Assert
+            Assert.AreEqual(outcomeexpected, resultofcode);
+        }
+
+        [Test]
+        public void GetRetangleWidth_InputWidth49_outcomeEquals49()
+        {
+            //Arrange
+            int rectanglew = 49;
+            int rectanglel = 49;
+
+            int outcomeexpected = rectanglew;
+            Rectangle result = new Rectangle(rectanglew, rectanglel);
+
+            //Act
+            int resultofcode = result.GetWidth();
+
+            //Assert
+            Assert.AreEqual(outcomeexpected, resultofcode);
+        }
+        [Test]
+        public void SetRectangleWidth_InputWidth17_outcomeEquals17()
+        {
+            //Arrange
+            int rectanglel = 15;
+            int rectanglew = 17;
+            int outcomeexpected = rectanglew;
+            Rectangle result = new Rectangle(rectanglew, rectanglel);
+
+            //Act
+            int resultofcode = result.SetWidth(rectanglew);
+
+            //Assert
+            Assert.AreEqual(outcomeexpected, resultofcode);
+        }
+
+        [Test]
+        public void GetRectanglrPerimeter_Length17Width19_outcomeEquals72()
+        {
+            //Arrange
+            int rectanglel = 17;
+            int rectanglew = 19;
+            int rectanglep = 2 * (rectanglel + rectanglew);
+            int outcomeexpected = rectanglep;
+            Rectangle result = new Rectangle(rectanglel, rectanglew);
+
+            //Act
+            int resultofcode = result.GetPerimeter();
+
+            //Assert
+            Assert.AreEqual(outcomeexpected, resultofcode);
+        }
+        [Test]
+        public void GetRectangleArea_Length21Width23_outcomeEquals44()
+        {
+            //Arrange
+            int rectanglel = 21;
+            int rectanglew = 23;
+            int rectanglea = (rectanglel * rectanglew);
+            int outcomeexpected = rectanglea;
+            Rectangle result = new Rectangle(rectanglel, rectanglew);
+
+            //Act
+            int resultofcode = result.GetArea();
+
+            //Assert
+            Assert.AreEqual(outcomeexpected, resultofcode);
+        }
+
+
+
+
+    }
+}
