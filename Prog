@@ -1,0 +1,94 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment02_v2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string userChoice = "Y";
+
+            while (userChoice == "Y")
+            {
+
+                bool validChoice = false;
+                int menuoption;
+
+                while (validChoice == false)
+                {
+                    Console.WriteLine("Press 1 to enter the triangle dimensions");
+                    Console.WriteLine("Press 2 to exit");
+                    Console.WriteLine("\nSelect an option from the above menu");
+                    bool result = int.TryParse(Console.ReadLine(), out menuoption);
+
+                    if (menuoption == 1)
+                    {
+                        validChoice = true;
+
+                        int s1 = ValidateUserInput("side1");
+                        int s2 = ValidateUserInput("side2");
+                        int s3 = ValidateUserInput("side3");
+
+                        Console.WriteLine(
+                        TriangleSolver.Analyze(s1, s2, s3));
+
+
+                        Console.WriteLine("Do you still wish to continue : [Y/N]");
+                        userChoice = Console.ReadLine().ToUpper();
+                    }
+
+                    else if (menuoption == 2)
+                    {
+                        validChoice = true;
+                        Environment.Exit(0);
+
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("You have entered an invalid option, Please Press 1 or 2");
+                    }
+                }
+            }
+        }
+
+        public static int ValidateUserInput(string side)
+        {
+            int number = 0;
+            bool isValid = false;
+            bool isInteger;
+            while (!isValid)
+            {
+                Console.WriteLine("Enter the {0} of triangle(in integer)", side);
+                string userInput = Console.ReadLine();
+                isInteger = int.TryParse(userInput, out number);
+
+                if (isInteger == false)
+                {
+                    Console.WriteLine("Please enter a valid integer as a side of triangle");
+                }
+
+                else if (number <= 0)
+                {
+                    Console.WriteLine("Side cannot be less than or equal to 0, please try again. \n");
+                }
+
+
+                else
+                {
+                    isValid = true;
+                    Console.WriteLine("The {0} of your triangle is now {1}", side, number);
+                }
+
+            }
+
+            return number;
+
+        }
+    }
+}
+
