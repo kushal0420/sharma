@@ -1,0 +1,161 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Assignment02_v2;
+using NUnit.Framework;
+
+namespace Assignment02_Test_v02
+{
+    [TestFixture]
+    public class Assignment2_Test
+    {
+        [Test]
+        public void Analyze_input_first_side_3_input_second_side_Equals3_input_third_side_Equals3_expected_triangle_is_equlator()
+        {
+            //Arrange  
+            int first_side = 3;
+            int second_side = 3;
+            int third_side = 3;
+            string testcase = "\n\nTriangle Formation is possible with the entered sides and it will be equilateral triangle";
+
+            //Act
+            string testcase1 = TriangleSolver.Analyze(first_side, second_side, third_side);
+
+
+            //Assert
+            Assert.AreEqual(testcase, testcase1);
+
+        }
+
+        [Test]
+
+        public void Analyze_input_first_side_44_input_second_side_Equals44_input_third_side_Equals44_expected_triangle_is_equlator()
+        {
+            //Arrange  
+            int first_side = 44;
+            int second_side = 44;
+            int third_side = 44;
+            string testcase = "\n\nTriangle Formation is possible with the entered sides and it will be equilateral triangle";
+
+            //Act
+            string testcase1 = TriangleSolver.Analyze(first_side, second_side, third_side);
+
+
+            //Assert
+            Assert.AreEqual(testcase, testcase1);
+
+        }
+        [Test]
+
+        public void Analyze_input_first_side_5_input_second_side_Equals45_input_third_side_Equals4_expected_triangle_is_isosceles()
+        {
+            //Arrange  
+            int first_side = 5;
+            int second_side = 5;
+            int third_side = 4;
+            string testcase = "\n\nTriangle Formation is possible with the entered sides and it will be isosceles triangle";
+
+            //Act
+            string testcase1 = TriangleSolver.Analyze(first_side, second_side, third_side);
+
+
+            //Assert
+            Assert.AreEqual(testcase, testcase1);
+        }
+
+        [Test]
+
+        public void Analyze_input_first_side_65_input_second_side_Equals55_input_third_side_Equals65_expected_triangle_is_isosceles()
+        {
+            //Arrange  
+            int first_side = 65;
+            int second_side = 55;
+            int third_side = 65;
+            string testcase = "\n\nTriangle Formation is possible with the entered sides and it will be isosceles triangle";
+
+            //Act
+            string testcase1 = TriangleSolver.Analyze(first_side, second_side, third_side);
+
+
+            //Assert
+            Assert.AreEqual(testcase, testcase1);
+        }
+
+        [Test]
+
+        public void Analyze_input_first_side_10_input_second_side_Equals8_input_third_side_Equals14_expected_triangle_is_scalene()
+        {
+            //Arrange  
+            int first_side = 10;
+            int second_side = 8;
+            int third_side = 14;
+            string testcase = "\n\nTriangle Formation is possible with the entered sides and it will be scalene triangle";
+
+            //Act
+            string testcase1 = TriangleSolver.Analyze(first_side, second_side, third_side);
+
+
+            //Assert
+            Assert.AreEqual(testcase, testcase1);
+        }
+
+        [Test]
+
+        public void Analyze_input_first_side_57_input_second_side_Equals78_input_third_side_Equals87_expected_triangle_is_scalene()
+        {
+            //Arrange  
+            int first_side = 57;
+            int second_side = 78;
+            int third_side = 87;
+            string testcase = "\n\nTriangle Formation is possible with the entered sides and it will be scalene triangle";
+
+            //Act
+            string testcase1 = TriangleSolver.Analyze(first_side, second_side, third_side);
+
+
+            //Assert
+            Assert.AreEqual(testcase, testcase1);
+
+
+        }
+
+        [Test]
+
+        public void Analyze_input_first_side_23_input_second_side_Equals47_input_third_side_Equals3_expected_triangle_is_not_possible()
+        {
+            //Arrange  
+            int first_side = 23;
+            int second_side = 47;
+            int third_side = 3;
+            string testcase = "\n\nTriangle Formation is not possible with the entered sides";
+
+            //Act
+            string testcase1 = TriangleSolver.Analyze(first_side, second_side, third_side);
+
+
+            //Assert
+            Assert.AreEqual(testcase, testcase1);
+
+
+        }
+        [Test]
+
+        public void Analyze_input_first_side_53_input_second_side_Equals87_input_third_side_Equals9_expected_triangle_is_not_possible()
+        {
+            //Arrange  
+            int first_side = 53;
+            int second_side = 87;
+            int third_side = 9;
+            string testcase = "\n\nTriangle Formation is not possible with the entered sides";
+
+            //Act
+            string testcase1 = TriangleSolver.Analyze(first_side, second_side, third_side);
+
+
+            //Assert
+            Assert.AreEqual(testcase, testcase1);
+        }
+    }
+}
