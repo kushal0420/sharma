@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment02_v2
+{
+    public static class TriangleSolver
+    {
+        static int side1;
+        static int side2;
+        static int side3;
+
+
+        public static string Analyze(int s1, int s2, int s3)
+        {
+            string outputString = "";
+            // Accept three integers as an input
+
+            side1 = s1;
+            side2 = s2;
+            side3 = s3;
+
+            // Check Triangle Formation
+
+            bool isTriangleFormationPossible = checkTriangleFormation();
+
+            if (isTriangleFormationPossible == true)
+            {
+
+                if (side1 == side2 && side2 == side3)
+                {
+                    outputString = "\n\nTriangle Formation is possible with the entered sides and it will be equilateral triangle";
+                }
+
+                else if (side1 == side2 || side2 == side3 || side1 == side3)
+                {
+                    outputString = "\n\nTriangle Formation is possible with the entered sides and it will be isosceles triangle";
+                }
+
+                else
+                {
+                    outputString = "\n\nTriangle Formation is possible with the entered sides and it will be scalene triangle";
+                }
+
+            }
+
+            else
+            {
+                outputString = "\n\nTriangle Formation is not possible with the entered sides";
+            }
+
+            return outputString;
+        }
+
+        public static bool checkTriangleFormation()
+        {
+            bool triangleform = false;
+
+            if (((side1 + side2) > side3) && ((side2 + side3) > side1) && (side1 + side3) > side2)
+            {
+                triangleform = true;
+            }
+
+            return triangleform;
+        }
+    }
+
+}
