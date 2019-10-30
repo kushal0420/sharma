@@ -1,0 +1,98 @@
+        public double GetFirstNumber()
+        {
+            return firstNumber;
+        }
+
+
+        public double SetFirstNumber(double firstNumber)
+        {
+            this.firstNumber = firstNumber;
+            return this.firstNumber;
+        }
+
+
+        public double GetSecondNumber()
+        {
+            return secondNumber;
+        }
+
+
+        public double SetSecondNumber(double secondNumber)
+        {
+            this.secondNumber = secondNumber;
+            return this.secondNumber;
+        }
+
+        public double GetAddition()
+        {
+            return Math.Round((firstNumber + secondNumber), 2);
+        }
+
+        public double GetSubtraction()
+        {
+            return Math.Round((firstNumber - secondNumber), 2);
+        }
+
+        public double GetMultiplication()
+        {
+            return Math.Round((firstNumber * secondNumber), 2);
+        }
+
+        public double GetDivision()
+        {
+            try
+            {
+                return Math.Round((firstNumber / secondNumber), 2);
+            }
+            catch (DivideByZeroException)
+            {
+                return (0);
+            }
+
+
+        }
+    }
+}
+
+
+Main Calculator  Nunit Test cases
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using SimpleCalculator;
+using NUnit.Framework;
+
+namespace SimpleCalculator_Tests
+{
+    [TestFixture]
+    class SimpleCalculator_Tests
+    {
+        [Test]
+        public void GetAddition_Input17and21_Returns38()
+        {
+            //Arrange
+            double uservalue1 = 17;
+            double uservalue2 = 21;
+
+            double expectedResult = uservalue1 + uservalue2;
+
+            Calc testCalc = new Calc(uservalue1, uservalue2);
+
+            //Act 
+            double actualResult = testCalc.GetAddition();
+
+            //Assert 
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [Test]
+        public void GetAddition_Input24point3and59point5_Returns83point8()
+        {
+            //Arrange
+            double uservalue1 = 24.3;
+            double uservalue2 = 59.5;
+
+            double expectedResult = uservalue1 + uservalue2
