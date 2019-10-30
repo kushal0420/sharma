@@ -1,0 +1,73 @@
+[Test]
+        public void GetSubtraction_Input12and5_Returns7()
+        {
+            //Arrange
+            double uservalue1 = 12;
+            double uservalue2 = 5;
+
+            double expectedResult = uservalue1 - uservalue2;
+
+            Calc testCalc = new Calc(uservalue1, uservalue2);
+
+            //Act 
+            double actualResult = testCalc.GetSubtraction();
+
+            //Assert 
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+        [Test]
+        public void GetSubtraction_Input2point0and1point0_Returns1()
+        {
+            //Arrange
+            double uservalue1 = 2.0;
+            double uservalue2 = 1.0;
+
+            double expectedResult = uservalue1 - uservalue2;
+
+            Calc testCalc = new Calc(uservalue1, uservalue2);
+
+            //Act 
+            double actualResult = testCalc.GetSubtraction();
+
+            //Assert 
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+        [Test]
+        public void GetSubtraction_Input41point9and25point5_Returns16point4()
+        {
+            //Arrange
+            double uservalue1 = 41.9;
+            double uservalue2 = 25.5;
+
+            double expectedResult = uservalue1 - uservalue2;
+
+            Calc testCalc = new Calc(uservalue1, uservalue2);
+
+            //Act 
+            double actualResult = testCalc.GetSubtraction();
+
+            //Assert 
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+        [Test]
+        public void GetDivision_Input5point0and1point0_Returns5()
+        {
+            //Arrange
+            double uservalue1 = 5.0;
+            double uservalue2 = 1.0;
+
+            double expectedResult = uservalue1 / uservalue2;
+
+            Calc testCalc = new Calc(uservalue1, uservalue2);
+
+            //Act 
+            double actualResult = testCalc.GetDivision();
+
+            //Assert 
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+        [Test]
+        public void GetDivision_Input81point0and9point0_Returns9()
+        {
+            //Arrange
+            double uservalue1 = 81.0;
